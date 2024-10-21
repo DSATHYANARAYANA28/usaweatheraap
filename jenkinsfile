@@ -1,0 +1,11 @@
+pipeline{
+  Tools{
+   
+}
+  agent any
+  stages {
+    stage ('Intialize'){
+
+  }     
+ }
+}
