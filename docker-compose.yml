@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:  
+  my-weather-app:    
+  image: sathya2815/my-weather-app    
+  ports:      
+    - "8080:8080"
