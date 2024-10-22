@@ -1,21 +1,21 @@
-name:"sonar_cloud_scan_github_actions"
+name: SonarCloud Scan
+
 on:
   workflow_dispatch:
 
 jobs:
-    build:
-      run-on: ubuntu-latest
-      steps:
-         - uses: actions/checkout@v3
-           with:
-               fetch-depth: 0
-           name: SonarCloud Scan
-           uses: sonar-source/sonarcloud-github-action@master
-           env:
-              GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-              SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
-           with:
-             args: >
-                 -Dsonar.organization=dsathyanarayana28
-                 -Dsonar.projectKey=usaweatheraap
-                 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: sonar-source/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=dsathyanarayana28
+            -Dsonar.projectKey=usaweatheraap
